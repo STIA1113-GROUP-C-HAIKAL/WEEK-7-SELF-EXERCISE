@@ -14,6 +14,12 @@ public class BankPassword {
 		System.out.println("Please insert your bank pin here : ");
 		bankPin = sc.nextInt();
 		
+		if (bankPin == 488672)
+		{
+			System.out.println("Welcome back to Maybank.");
+			sc.close();
+		}
+		else {
 		while (bankPin != 488672)
 		{
 			System.out.println("False, please try again");
@@ -47,6 +53,7 @@ public class BankPassword {
 			} 
 			
 				
+		}
 		}
 		
 	}
