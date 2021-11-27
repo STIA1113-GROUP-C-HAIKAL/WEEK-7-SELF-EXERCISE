@@ -1,0 +1,54 @@
+package repetitionAndSelection;
+
+import java.util.Scanner;
+
+public class BankPassword {
+
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		int bankPin;
+		int attempts = 2;
+		
+		System.out.println("Please insert your bank pin here : ");
+		bankPin = sc.nextInt();
+		
+		while (bankPin != 488672)
+		{
+			System.out.println("False, please try again");
+			bankPin = sc.nextInt();
+			if (bankPin == 488672)
+			{
+				System.out.println("Welcome back to Maybank.");
+			}
+			else if (bankPin != 488672)
+			{
+				int attempt1 = attempts - 1;
+				System.out.println("Attempts left " + attempt1);
+				bankPin = sc.nextInt();
+				
+				if (bankPin == 488672)
+				{
+					System.out.println("Welcome back to Maybank.");
+				}
+				else
+				{
+					int attempt2 = attempt1 - 1;
+					System.out.println("Attempts left " + attempt2);
+					
+					if (attempt2 == 0)
+					{
+						System.out.println("Your card has been blocked, please contact your local Maybank.");
+						break;
+					}
+				}
+				sc.close();
+			} 
+			
+				
+		}
+		
+	}
+
+}
